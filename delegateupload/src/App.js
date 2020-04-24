@@ -14,7 +14,7 @@ class App extends Component {
   return (
     <BrowserRouter>
       <div>
-        <p>delegate roster upload</p>
+        <p>delegate roster uploads</p>
         <main>
          {routelist}
         </main>
