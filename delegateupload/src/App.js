@@ -12,13 +12,13 @@ class App extends Component {
     routelist=[<Route exact path="/" component={UploadPage}/>]
 
   return (
-    <BrowserRouter>
+    
       <div>
         <main>
-         {routelist}
+         <p>need to know this works without BrowserRouter</p>
         </main>
       </div>
-      </BrowserRouter>
+      
     
     
   );
