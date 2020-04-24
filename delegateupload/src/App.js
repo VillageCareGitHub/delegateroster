@@ -12,13 +12,14 @@ class App extends Component {
     routelist=[<Route exact path="/" component={UploadPage}/>]
 
   return (
-    
+    <BrowserRouter>
       <div>
+        <p>delegate roster upload</p>
         <main>
-         <p>need to know this works without BrowserRouter round 2</p>
+         {routelist}
         </main>
       </div>
-      
+      </BrowserRouter> 
     
     
   );
