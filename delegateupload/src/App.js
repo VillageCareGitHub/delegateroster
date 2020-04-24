@@ -12,13 +12,13 @@ class App extends Component {
     routelist=[<Route exact path="/" component={UploadPage}/>]
 
   return (
-    
+    <BrowserRouter>
       <div>
         <main>
-         <a>href={routelist}>Click Here</a>
+         {routelist}
         </main>
       </div>
-    
+      </BrowserRouter>
     
     
   );
