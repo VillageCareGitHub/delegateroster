@@ -5,6 +5,8 @@ from flask_cors import CORS
 import string
 import csv
 import os
+from app.facilityinfo import FacilityInfo as fc
+
 
 UPLOAD_FOLDER='C:\\Users\\Public\\Documents\\VillageCare\\DELEGATE_UPLOAD\\delegateflask\\flask_app\\uploaddoc'
 ALLOWED_EXTENSIONS=set(['csv','xls','xlsx'])
@@ -34,5 +36,18 @@ def importfile():
     realfilename.save(os.path.join(UPLOAD_FOLDER,realfilename.filename))
 
     # Code to translate and map file will go here
+    tf=fc.import_delegate_roster(os.path.join(UPLOAD_FOLDER,realfilename.filename),'Institute for Family Health')
+    
+    tf_final=tf.replace('nan','')
+    tf_final.to_csv(os.path.join(UPLOAD_FOLDER,'Institute for Family Health_05122020.csv'),index=False,quoting=csv.QUOTE_MINIMAL)
+    print(tf.head())
 
     return jsonify({"output":"File has been processed"})
+
+@app.route('/api/delegateroster/facilityload',methods=['POST'])
+def facilityload():
+    print('hello')
+    fl=fc.facility_list()
+    print(fl)
+    
+    return jsonify({"output":fl})

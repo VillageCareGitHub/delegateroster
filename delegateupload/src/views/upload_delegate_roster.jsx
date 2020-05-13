@@ -1,4 +1,5 @@
-import React from "react";
+
+import React,{Component,Fragment} from 'react'
 
 import apiCall from '../util/apiCallFileUpload';
 
@@ -47,7 +48,9 @@ class UploadDelegateRoster extends React.Component {
   state={
     filetoupload:null,
     fileresponse:null,
-    fileresponsedata:null
+    fileresponsedata:null,
+    facilitylist:[],
+    loadstate:false
 }
 
 uploadFile(e) {
@@ -56,6 +59,7 @@ uploadFile(e) {
     
     let formData = new FormData()
     let name = "ex"; // Just an example
+    // let url='http://vcawswebdev:5000/api/delegateroster/importfile'
     let url='http://127.0.0.1:5000/api/delegateroster/importfile'
     formData.append("filename", file)
     let xhr = new XMLHttpRequest()
@@ -76,14 +80,32 @@ uploadFile(e) {
   }
 
 
+  getfacilityinfo=()=>{
+    const endpoint = '/api/delegateroster/facilityload'
+    const promise = apiCall(endpoint,'POST')
+       console.log('in api call function')
+       promise.then(blob=>blob).then(json=>{
+        console.log('inside function')
+        console.log(json)
+        this.setState({
+            facilitylist:json.output
+            
+            
+        })
+        console.log(this.state.fileresponsedata)
+       })
 
+} 
 
-
+  componentDidMount(){
+    this.getfacilityinfo()
+  }
 
   render() {
     const { classes } = this.props;
-  
-
+    // if (this.state.loadstate==false){
+    //   this.getfacilityinfo();
+    // }
 
 
   return (
@@ -120,7 +142,7 @@ uploadFile(e) {
                 <GridItem xs={12} sm={12} md={4}>
                 <div className="facilityselector">
                   <label>Select Facility to Map to File</label><Select id="facility" placeholder='SELECT DELEGATE ROSTER FACILITY'
-                  options={facilities}>Select Delegate Roster Facility</Select>
+                  options={this.state.facilitylist}>Select Delegate Roster Facility</Select>
                 </div>
                 </GridItem>      
                 
@@ -130,7 +152,9 @@ uploadFile(e) {
                 <div className="customimportbutton"><Button onClick={(event)=>{                 
                     
                     this.uploadFile(event)
+                    
                     alert('Provider Roster Uploaded')
+                    
                     
                 }}>Upload Provider Roster</Button></div>
                 </GridItem>
