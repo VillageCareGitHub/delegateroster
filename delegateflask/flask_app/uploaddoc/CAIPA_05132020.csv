@@ -1,0 +1,18 @@
+Tab,New Contract (Y or N),Provider ID,Effective Date,Last Name,First Name,Middle Name,Degree,NameSwitch,Provider Type,Practice Type,NPI,Social Security #,DOB,Gender,Medicare,Medicaid,License ,License Issue Date,LICENSE EXPIRATION,DEA ,DEA  Issue Date,DEA Expiration,HIV EXPERTISE,Provider Expertise 1,Provider Expertise 2,Provider Expertise 3,Provider Expertise 4,Provider Expertise 5,Taxonomy Code,Taxonomy Code 2,Taxonomy Code 3,Foreign Languages ,Foreign Languages 2,Foreign Languages3,Foreign Languages 4,Foreign Languages 5,Primary Specialty Description,Spec Code ,Board Certification,Cert Start Date,Cert Expiration Date,"Certifying Board Name
+","Certifying Board 
+Only 3 Digit Number acceptable ignore all other",Secondary Specialty Description,Spec Code 2,Board Certification 2,Cert Start Date 2,Cert Expiration Date 2,"Certifying Board Name 2
+","Certifying Board 2
+Only 3 Digit Number acceptable ignore all other",Tertiary Specialty Description,Spec Code 3,Board Certification 3,Cert Start Date 3,Cert Expiration Date 3,"Certifying Board Name 3
+","Certifying Board 3
+Only 3 Digit Number acceptable ignore all other",Fourth Specialty Description,Spec Code 4,Board Certification 4,Cert Start Date 4,Cert Expiration Date 4,"Certifying Board Name 4
+","Certifying Board 4
+Only 3 Digit Number acceptable ignore all other",TIN,Group Name 35 characters,Service Location 35 characters,Service Location City,Service Location ST,Service Location Zip,Service Location Zip + 4,Service Location Phone,Service Location Fax,"Counties Served
+Manhattan
+","Counties Served
+Brooklyn aka Kings
+","Counties Served
+Queens
+","Counties Served
+Bronx",Billing Address ,Billing Address City,Billing Address ST,Billing Address Zip,Billing Address Zip +4,Billing Address Phone,W9 Name,W9 Address,W9 Address City,W9 Address ST,W9 Address Zip,W9 Address Zip + 4,Print in Directory?,Accepting New Patients,Handicap Access Yes/No,ADA Compliant,Exam Room,Equipment,Public Transportation,Translation,OfficeHoursMonday,OfficeHoursTues,OfficeHoursWed,OfficeHoursThurs,OfficeHoursFri,OfficeHoursSat,OfficeHoursSun,EmailAddress,Plan Request/ Comment,PCO Note
+,,,2020-04-05 00:00:00,Ng,Sow ,Fong,PA,Y,PC,,1720434897,433-73-0922,1965-09-10 00:00:00,Female,I0652,19186200,21232,,2020-07-31 00:00:00,MN4440931,,2020-10-31 00:00:00,,,,,,,363LA2200X ,,,Cantonese,Mandarin,,,,Physician Assistant,,Board Certified,2015-10-08 00:00:00,2025-10-08 00:00:00,National Commission on Certification of Physician Assistants,,,,,,,,,,,,,,,,,,,,,,,13-4048733,"Universal Medical Service, LLC",4506 8th Avenue,Brooklyn,NY,11220,1516,718-972-1233,718-972-1277,,X,,,4506 8th Avenue,Brooklyn,NY,11220,1516,718-972-1233,"Universal Medical Service, LLC",4506 8th Avenue,Brooklyn,NY,11220,1516,Y,Y,Y,Y,Y,Y,Y,Y,0830AM 0430PM,0830AM 0430PM,0830AM 0430PM,,0830AM 0430PM,,,binglu77@hotmail.com,Add Provider,
+,,,2020-03-01 00:00:00,Duan,JingYi,,PA,Y,PC,,1699108829,594-29-9757,04/30/1985,Female,,4360243,16845,,03/31/2022,MD3178882,,06/30/2020,,,,,,,363A00000X,,,Chinese,,,,,Physician Assistant,,Borad Certified,08/08/2013,12/31/2019,National Commission on Certification of Physician Assistants,,,,,,,,,,,,,,,,,,,,,,,13-3923495,"Chinese American IPA, Inc","202 Canal Street, Suite 500",New York,NY,10013,4517,212-966-9888,212-965-1875,X,,,,"202 Canal Street, Suite 500",New York,NY,10013,4517,212-966-9888,"Chinese American IPA, Inc","202 Canal Street, Suite 500",New York,NY,10013,4517,Y,Y,N,Y,Y,Y,Y,Y,,,,,,,,jingster430@gmail.com,Add Provider,

@@ -5,6 +5,7 @@ from flask_cors import CORS
 import string
 import csv
 import os
+import datetime
 from app.facilityinfo import FacilityInfo as fc
 
 
@@ -33,13 +34,18 @@ def importfile():
     filehold=[]
     print(request.files['filename'])
     realfilename=request.files['filename']
+    vendorname=request.form['vendor']
+    print(vendorname)
     realfilename.save(os.path.join(UPLOAD_FOLDER,realfilename.filename))
 
     # Code to translate and map file will go here
-    tf=fc.import_delegate_roster(os.path.join(UPLOAD_FOLDER,realfilename.filename),'Institute for Family Health')
+    tf=fc.import_delegate_roster(os.path.join(UPLOAD_FOLDER,realfilename.filename),vendorname)
+
+    filedatetimestamp=datetime.datetime.today().strftime("%m%d%Y")
+    exportfilename='{0}_{1}.csv'.format(vendorname,filedatetimestamp)
     
-    tf_final=tf.replace('nan','')
-    tf_final.to_csv(os.path.join(UPLOAD_FOLDER,'Institute for Family Health_05122020.csv'),index=False,quoting=csv.QUOTE_MINIMAL)
+    tf_final=tf.replace('nan','').replace('NaT','')
+    tf_final.to_csv(os.path.join(UPLOAD_FOLDER,exportfilename),index=False,quoting=csv.QUOTE_MINIMAL)
     print(tf.head())
 
     return jsonify({"output":"File has been processed"})

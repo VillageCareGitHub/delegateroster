@@ -50,10 +50,11 @@ class UploadDelegateRoster extends React.Component {
     fileresponse:null,
     fileresponsedata:null,
     facilitylist:[],
-    loadstate:false
+    loadstate:false,
+    cmselect:null
 }
 
-uploadFile(e) {
+uploadFile(e,vendor) {
     e.preventDefault();
     let file = this.state.filetoupload;
     
@@ -62,6 +63,7 @@ uploadFile(e) {
     // let url='http://vcawswebdev:5000/api/delegateroster/importfile'
     let url='http://127.0.0.1:5000/api/delegateroster/importfile'
     formData.append("filename", file)
+    formData.append("vendor",vendor)
     let xhr = new XMLHttpRequest()
     xhr.responseType='text'
     console.log(formData)
@@ -95,7 +97,17 @@ uploadFile(e) {
         console.log(this.state.fileresponsedata)
        })
 
-} 
+}
+
+handleChange = selectedOption => {
+  this.setState({ selectedOption });
+  for (var key in selectedOption){
+      if (key==='value'){
+          this.setState({cmselect:selectedOption[key]})
+
+      }
+  }
+};
 
   componentDidMount(){
     this.getfacilityinfo()
@@ -142,7 +154,7 @@ uploadFile(e) {
                 <GridItem xs={12} sm={12} md={4}>
                 <div className="facilityselector">
                   <label>Select Facility to Map to File</label><Select id="facility" placeholder='SELECT DELEGATE ROSTER FACILITY'
-                  options={this.state.facilitylist}>Select Delegate Roster Facility</Select>
+                  options={this.state.facilitylist} onChange={this.handleChange} >Select Delegate Roster Facility</Select>
                 </div>
                 </GridItem>      
                 
@@ -151,7 +163,7 @@ uploadFile(e) {
                 <GridItem xs={12} sm={12} md={4}>
                 <div className="customimportbutton"><Button onClick={(event)=>{                 
                     
-                    this.uploadFile(event)
+                    this.uploadFile(event,this.state.cmselect)
                     
                     alert('Provider Roster Uploaded')
                     
